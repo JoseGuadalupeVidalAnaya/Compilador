@@ -11,10 +11,8 @@ public class Main
 
     public static void main(String[] args)
     {
-        Pila pila = new Pila();
-        pila.poner("hola");
-        System.out.println(pila.quitar());
-        System.out.println(pila.quitar());
+        Metodos met=new Metodos();
+        System.out.println(met.postfijo("((1+2)/3)*3"));
     }
 
 }

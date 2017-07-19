@@ -43,7 +43,7 @@ public class Pila
         return pila.remove(pila.size() - 1);
     }
 
-    boolean Vacia()
+    boolean vacia()
     {
         return pila.isEmpty();
     }
@@ -63,5 +63,9 @@ public class Pila
             }
         }
         return -1;
+    }
+    public int tamaño()
+    {
+        return pila.size();
     }
 }

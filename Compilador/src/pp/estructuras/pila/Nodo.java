@@ -13,7 +13,7 @@ public class Nodo
     public Nodo(String valor)
     {
         this.valor = valor;
-        sig=null;
+        sig = null;
     }
 
     public String getValor()

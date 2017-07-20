@@ -13,7 +13,7 @@ public class Main
 
     public static void main(String[] args)
     {
-        Metodos met=new Metodos();
+        Metodos met = new Metodos();
         System.out.println(met.postfijo("((1+2)/3)*3"));
     }
 

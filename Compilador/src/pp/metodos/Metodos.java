@@ -1,4 +1,6 @@
-package pp;
+package pp.metodos;
+
+import pp.estructuras.pila.Pila;
 
 /**
  *
@@ -19,7 +21,7 @@ public class Metodos
      * @param exprecion
      * @return
      */
-    String postfijo(String exprecion)
+    public String postfijo(String exprecion)
     {
         String aux = "";
         for (int i = 0; i < exprecion.length(); i++)

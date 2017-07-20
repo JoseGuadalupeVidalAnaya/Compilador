@@ -1,4 +1,4 @@
-package pp;
+package pp.estructuras.pila;
 
 import java.util.ArrayList;
 
@@ -34,20 +34,30 @@ public class Pila
     }
 
     /**
-     * Metodo que recupera y quita el elemento que esta en la cima
+     * Metodo que recupera y borra el elemento que esta en la cima de la pila
      *
      * @return El elemeto que esta en la cima de la pila
      */
-    public String quitar() 
+    public String quitar()
     {
         return pila.remove(pila.size() - 1);
     }
 
-    boolean vacia()
+    /**
+     * Comprueva si la pila esta vacia
+     *
+     * @return true si la pila esta vacia o false si almenos tiene un elemento
+     */
+    public boolean vacia()
     {
         return pila.isEmpty();
     }
 
+    /**
+     * Obtiene el elemento que esta en la cima sin borrarlo
+     *
+     * @return El ultimo elemento agregado
+     */
     public String ver()
     {
         return pila.get(pila.size() - 1);
@@ -64,6 +74,7 @@ public class Pila
         }
         return -1;
     }
+
     public int tamaño()
     {
         return pila.size();

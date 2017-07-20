@@ -1,5 +1,7 @@
 package pp;
 
+import pp.metodos.Metodos;
+
 /**
  * Clase principal
  *

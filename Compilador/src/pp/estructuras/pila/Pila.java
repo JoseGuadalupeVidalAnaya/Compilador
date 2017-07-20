@@ -1,7 +1,5 @@
 package pp.estructuras.pila;
 
-import java.util.ArrayList;
-
 /**
  * Esta clase representa una estructura de datos permite almacenar y recuperar
  * datos basasa en LIFO
@@ -13,14 +11,16 @@ import java.util.ArrayList;
 public class Pila
 {
 
-    private ArrayList<String> pila;
+    private Nodo pila;
+    private int size;
 
     /**
      * Crea una pila vacia
      */
     public Pila()
     {
-        pila = new ArrayList<>();
+        pila = null;
+        size = -1;
     }
 
     /**
@@ -30,7 +30,17 @@ public class Pila
      */
     public void poner(String elemento)
     {
-        pila.add(elemento);
+        if (pila == null)
+        {
+            pila = new Nodo(elemento);
+        }
+        else
+        {
+            Nodo nuevo = new Nodo(elemento);
+            nuevo.sig = pila;
+            pila = nuevo;
+        }
+        size++;
     }
 
     /**
@@ -40,7 +50,10 @@ public class Pila
      */
     public String quitar()
     {
-        return pila.remove(pila.size() - 1);
+        String dato = pila.getValor();
+        pila = pila.sig;
+        size = 0;
+        return dato;
     }
 
     /**
@@ -50,7 +63,7 @@ public class Pila
      */
     public boolean vacia()
     {
-        return pila.isEmpty();
+        return pila == null;
     }
 
     /**
@@ -60,23 +73,25 @@ public class Pila
      */
     public String ver()
     {
-        return pila.get(pila.size() - 1);
+        return pila.getValor();
     }
 
     public int buscar(String elemento)
     {
-        for (int i = pila.size() - 1; i >= 0; i++)
+        Nodo aux = pila;
+        for (int i = size; i >= 0; i++)
         {
-            if (pila.get(i).equals(elemento))
+            if (aux.getValor().equals(elemento))
             {
                 return i;
             }
+            aux = aux.sig;
         }
         return -1;
     }
 
     public int tamaño()
     {
-        return pila.size();
+        return size + 1;
     }
 }

@@ -76,6 +76,13 @@ public class Pila
         return pila.getValor();
     }
 
+    /**
+     * Medodo que se encarga de buscar un elemento dentro de la pila
+     *
+     * @param elemento es es elemento que se desea encontrar en la pila
+     * @return La pocision donde se encuentra el elemento y si no lo encuentra
+     * devuelbe -1
+     */
     public int buscar(String elemento)
     {
         Nodo aux = pila;
@@ -90,6 +97,11 @@ public class Pila
         return -1;
     }
 
+    /**
+     * Metodo que devuelve el tamaño de la pila
+     *
+     * @return El tamaño de la pila
+     */
     public int tamaño()
     {
         return size + 1;
